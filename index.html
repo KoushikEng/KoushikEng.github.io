@@ -97,10 +97,13 @@
         <!-- 1. HERO SECTION (Confidence through Restraint) -->
         <section class="min-h-[50vh] flex flex-col justify-center pt-10 md:pt-0 mb-24 md:mb-32">
             <div id="profile-placeholder" class="mb-8 self-start">
-                <img src="profile.png" alt="Koushik Ghosh" class="w-full h-full object-cover rounded-full" onerror="this.style.display='none'; this.parentNode.innerHTML='[Profile Image Placeholder]'">
+                <picture>
+                    <source srcset="profile.webp" type="image/webp">
+                    <img src="profile.png" alt="Koushik Ghosh" class="w-full h-full object-cover rounded-full" onerror="this.style.display='none'; this.parentNode.innerHTML='[Profile Image Placeholder]'">
+                </picture>
             </div>
 
-            <h1 id="hero-text" class="text-4xl sm:text-6xl md:text-8xl text-white max-w-6xl pb-8">
+            <h1 id="hero-text" class="text-4xl sm:text-6xl md:text-8xl text-white max-w-6xl pb-8 uppercase">
                 KOUSHIK GHOSH
             </h1>
 
