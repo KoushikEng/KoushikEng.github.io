@@ -1,18 +1,245 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <title>Koushik Ghosh | Product Systems Thinker</title>
-    <script type="module" crossorigin src="/assets/index-C8wEGyu2.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-2cmq-55c.css">
-  </head>
-  <body>
-    <div class="antialiased min-h-screen bg-[#0A0A0A] text-[#FAFAFA]/90" id="root"></div>
-  </body>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koushik Ghosh | System Builder</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <!-- Use Inter as the primary font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom font setup and dark mode variables */
+        :root {
+            --color-bg: #0A0A0A;
+            --color-text: #FAFAFA;
+            --color-accent: #FFD700; /* Soft Gold/Yellow */
+            --font-primary: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            min-height: 100vh;
+            scroll-behavior: smooth;
+        }
+
+        /* Subtle scroll reveal animation for content sections */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom text selection color for a premium feel */
+        ::selection {
+            background: var(--color-accent);
+            color: var(--color-bg);
+        }
+
+        /* Hero text effect */
+        #hero-text {
+            line-height: 1.1;
+            font-weight: 800;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: rgba(250, 250, 250, 0.1);
+        }
+
+        /* Placeholder for profile image */
+        #profile-placeholder {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #1a1a1a;
+            border: 2px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(250, 250, 250, 0.5);
+            font-size: 0.9rem;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        /* Link styling */
+        a {
+            color: var(--color-accent);
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #FFFF99; /* Lighter shade on hover */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header / Navigation (Minimalist) -->
+    <header class="py-6 px-4 md:px-12 max-w-7xl mx-auto flex justify-between items-center z-10">
+        <div class="text-lg font-bold tracking-widest text-white/90">KG.</div>
+        <nav class="space-x-6 text-sm text-white/60 hidden sm:block">
+            <a href="#projects" class="hover:text-white transition duration-300">Work</a>
+            <a href="#expertise" class="hover:text-white transition duration-300">Expertise</a>
+            <a href="#" class="contact hover:text-white transition duration-300">Contact</a>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 md:px-12 pt-8 pb-20">
+
+        <!-- 1. HERO SECTION (Confidence through Restraint) -->
+        <section class="min-h-[50vh] flex flex-col justify-center pt-10 md:pt-0 mb-24 md:mb-32">
+            <div id="profile-placeholder" class="mb-8 self-start">
+                <picture>
+                    <source srcset="profile.webp" type="image/webp">
+                    <img src="profile.png" alt="Koushik Ghosh" class="w-full h-full object-cover rounded-full" onerror="this.style.display='none'; this.parentNode.innerHTML='[Profile Image Placeholder]'">
+                </picture>
+            </div>
+
+            <h1 id="hero-text" class="text-4xl sm:text-6xl md:text-8xl text-white max-w-6xl pb-8 uppercase">
+                KOUSHIK GHOSH
+            </h1>
+
+            <p class="text-lg sm:text-2xl font-light max-w-3xl text-white/80 mt-4 reveal-on-scroll">
+                CS Engineer | Embedded Systems Engineer | IoT Architect. I turn complex ambiguity into structured, elegant outcomes.
+            </p>
+
+            <!-- Low-ego, High-authority philosophy statement -->
+            <p class="text-md font-normal max-w-3xl mt-8 text-white/50 reveal-on-scroll">
+                <b>Philosophy:</b> I don't chase titles; I deliver systems that actually scale. Some call it engineering; I call it avoiding future headaches. <i>It's usually the same thing.</i>
+            </p>
+        </section>
+
+        <!-- Divider -->
+        <div class="section-divider my-24 reveal-on-scroll"></div>
+
+        <!-- 2. CORE EXPERTISE / SKILLS SECTION -->
+        <section id="expertise" class="py-12 md:py-16 reveal-on-scroll">
+            <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-12 text-white/90">
+                CORE EXPERTISE
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 text-center">
+                <div class="p-4 bg-[#141414] rounded-lg border border-[#1f1f1f] text-sm text-white/80 hover:border-white/50 transition duration-300">C/C++ & FreeRTOS</div>
+                <div class="p-4 bg-[#141414] rounded-lg border border-[#1f1f1f] text-sm text-white/80 hover:border-white/50 transition duration-300">LoRaWAN & IoT Architecture</div>
+                <div class="p-4 bg-[#141414] rounded-lg border border-[#1f1f1f] text-sm text-white/80 hover:border-white/50 transition duration-300">Control Systems</div>
+                <div class="p-4 bg-[#141414] rounded-lg border border-[#1f1f1f] text-sm text-white/80 hover:border-white/50 transition duration-300">Python & Simulation</div>
+                <div class="p-4 bg-[#141414] rounded-lg border border-[#1f1f1f] text-sm text-white/80 hover:border-white/50 transition duration-300">Docker & Linux</div>
+                <div class="p-4 bg-[#141414] rounded-lg border border-[#1f1f1f] text-sm text-white/80 hover:border-white/50 transition duration-300">Embedded Peripherals (SPI/I2C/UART)</div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="section-divider my-24 reveal-on-scroll"></div>
+        
+        <!-- 3. RESEARCH / PUBLICATION SECTION -->
+        <section id="research" class="py-12 md:py-16 reveal-on-scroll">
+            <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-8 text-white/90">
+                RESEARCH
+            </h2>
+            <div class="border border-[#1f1f1f] rounded-lg p-6 bg-[#141414] max-w-4xl">
+                <h3 class="text-xl font-semibold mb-2 text-white">
+                    Irriganet: Bridging IoT and farming for realtime smart irrigation control
+                </h3>
+                <p class="text-white/60 text-sm italic mb-4">
+                    Journals Pub, 2023
+                </p>
+                <p class="text-white/80 text-base">
+                    This publication details the architecture and performance validation of the control systems foundational to the <b>SmartIrrig</b> platform, focusing on real-time data integration and predictive resource management in agricultural IoT environments.
+                </p>
+                <!-- Add a placeholder link if you have one later -->
+                <p class="mt-4 text-xs text-white/40">
+                    https://ecc.journalspub.info/index.php?journal=JPECC&page=article&op=view&path%5B%5D=1855
+                </p>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="section-divider my-24 reveal-on-scroll"></div>
+
+        <!-- 3. EXPERIENCE or PROJECT SECTION (Select Systems) -->
+        <section id="projects" class="py-12 md:py-16 reveal-on-scroll">
+            <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-16 text-white/90">
+                SELECT SYSTEMS (OR: THINGS THAT DIDN'T EXPLODE)
+            </h2>
+
+            <!-- Project 1: SmartIrrig -->
+            <div class="mb-16 border-b border-[#1f1f1f] pb-12">
+                <span class="text-xs font-medium uppercase tracking-widest text-white/50 mb-4 block">Acquired Startup (IoT AgTech), under NDA</span>
+                <h3 class="text-4xl md:text-5xl font-extrabold text-white mb-4">SmartIrrig</h3>
+                <p class="text-lg md:text-xl font-light max-w-4xl text-white/80 mb-6">
+                    Founder & Embedded Systems Architect. Designed and deployed full-stack IoT irrigation systems for rural farms. We turned low-cost MCUs into high-yield assets.
+                </p>
+                <ul class="space-y-2 text-white/60 text-base">
+                    <li>→ <b>Impact:</b> Architected firmware and predictive algorithms that reduced water use by <b>30%</b> and boosted crop yield by <b>20%</b>.</li>
+                    <li>→ <b>Execution:</b> Built LoRa-based nodes for real-time soil/weather monitoring in offline zones, integrating nutrient recycling logic.</li>
+                    <li class="mt-4 text-white/80 italic"><b>Note:</b> Data doesn't lie, neither does the exit.</li>
+                </ul>
+            </div>
+
+            <!-- Project 2: AlgaeOS -->
+            <div class="mb-16">
+                <span class="text-xs font-medium uppercase tracking-widest text-white/50 mb-4 block">Current Venture (Biotech Control System)</span>
+                <h3 class="text-4xl md:text-5xl font-extrabold text-white mb-4">AlgaeOS - PBR Operating System</h3>
+                <p class="text-lg md:text-xl font-light max-w-4xl text-white/80 mb-6">
+                    Creator & Systems Architect. Developing a photobioreactor control system that automates and emulates industrial bioprocess environments for biotech R&D.
+                </p>
+                <ul class="space-y-2 text-white/60 text-base">
+                    <li>→ <b>System:</b> Designed IoT middleware integrating virtual sensors/actuators via MQTT and REST APIs to lay the foundation for future hardware.</li>
+                    <li>→ <b>Simulation:</b> Built complex simulation logic to replicate feedback control and environmental dynamics in bioreactors.</li>
+                    <li class="mt-4 text-white/80 italic"><b>Note:</b> Where others see messy biology, I see a clean control loop.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-7xl mx-auto px-4 md:px-12 py-8 border-t border-[#1f1f1f]">
+        <div class="flex flex-col sm:flex-row justify-between items-center text-sm text-white/40">
+            <p class="mb-4 sm:mb-0">© Koushik Ghosh. Systems Designed to Last.</p>
+            <div class="space-x-6">
+                <a href="https://www.linkedin.com/in/koushikghosh11" target="_blank" class="hover:text-white transition duration-300">LinkedIn</a>
+                <a href="#" class="contact hover:text-white transition duration-300">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for subtle scroll-based visibility (Aesthetic consistency & motion)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Stop observing once visible
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        });
+
+        // Observe all elements with the 'reveal-on-scroll' class
+        document.querySelectorAll('.reveal-on-scroll').forEach(element => {
+            observer.observe(element);
+        });
+
+        const encodedEmail = 'a291c2hpay5naG9zaEBteXlhaG9vLmNvbQ==';
+        
+        Array.from(document.getElementsByClassName('contact')).forEach(e => e.addEventListener('click', function(e) {
+            e.preventDefault();
+            const email = atob(encodedEmail);
+            window.location.href = 'mailto:' + email + '?subject=Inquiry from Portfolio site';
+        }));
+
+        console.log("Portfolio loaded. Ready to execute.");
+        console.log("How can I assist you further?");
+    </script>
+</body>
 </html>
