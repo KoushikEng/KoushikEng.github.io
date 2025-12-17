@@ -9,8 +9,26 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <title>Koushik Ghosh | Product Systems Thinker</title>
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === 'p' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&') 
+          }).filter(function(v) {
+            return v.slice(0, 2) === 'p='
+          })[0].slice(2);
+          
+          if (decoded !== l.pathname) {
+            window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + (l.search ? '' : '') + l.hash
+            );
+          }
+        }
+      }(window.location))
+    </script>
     <script type="module" crossorigin src="/assets/index-CKdjPLti.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-2cmq-55c.css">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
   </head>
   <body>
     <div class="antialiased min-h-screen bg-[#0A0A0A] text-[#FAFAFA]/90" id="root"></div>
